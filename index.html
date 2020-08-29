@@ -4,18 +4,27 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Data Table Example</title>
+    <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- jquery end -->
+
+    <!-- datatable css -->
     <link
       rel="stylesheet"
       type="text/css"
       href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"
     />
+    <!-- datatable css end -->
+
+    <!-- datatable js -->
     <script
       type="text/javascript"
       src="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.js"
     ></script>
+    <!-- datatable js end -->
   </head>
   <body>
+    <!-- (table) data will be rendered here -->
     <table id="example" class="display" style="width: 100%">
       <thead>
         <tr>
@@ -26,13 +35,18 @@
         </tr>
       </thead>
     </table>
+    <!-- table end -->
+
     <script>
+      // jquery selector $
       $(document).ready(function () {
         $("#example").DataTable({
           ajax: {
             url: "https://jsonplaceholder.typicode.com/todos",
+            // datatable ajax fetch data from url
             dataSrc: "",
           },
+          // json data key title
           columns: [
             {
               data: "id",
